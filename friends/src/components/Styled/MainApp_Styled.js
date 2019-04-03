@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
+/*
+font-family: 'Kalam', cursive;
+font-family: 'Parisienne', cursive;
+font-family: 'Playball', cursive;
+font-family: 'Chewy', cursive;
+font-family: 'Heebo', sans-serif;
+font-family: 'Poppins', sans-serif;
+   */
+
 const MainApp = styled.div`
   border: 4px solid blue;
   color: white;
   text-shadow: 5px 5px 3px darkgray;
-
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
   background: lightpink;
@@ -16,15 +24,6 @@ const MainApp = styled.div`
   align-items: center;
   align-content: center;
   font-size: 62.5%;
-  /*
-font-family: 'Kalam', cursive;
-font-family: 'Parisienne', cursive;
-font-family: 'Playball', cursive;
-font-family: 'Chewy', cursive;
-font-family: 'Heebo', sans-serif;
-font-family: 'Poppins', sans-serif;
-     */
-
 
 
 
@@ -32,7 +31,7 @@ font-family: 'Poppins', sans-serif;
 
 const MainAppH1 = styled.div`
     font-family: 'Chewy', cursive;
-    font-size: 3rem;
+    font-size: 4rem;
 `;
 
 
