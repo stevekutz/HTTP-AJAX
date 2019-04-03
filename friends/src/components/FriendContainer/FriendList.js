@@ -5,7 +5,7 @@ import {
   FriendsListContainer,
   FriendCard,
   FriendH3,
-
+  LinkFriend
 
 } from '../Styled/FriendContainerStyled';
 
@@ -18,14 +18,14 @@ const FriendList = (props) => {
   return (
     <FriendsListContainer>
       {props.friends.map(friend => (
-        <Link to = {`/friend-list/${friend.id}`} key = {friend.id}>
+        <LinkFriend to = {`/friend-list/${friend.id}`} key = {friend.id}>
           <FriendCard>
             <FriendH3>Name: {friend.name}</FriendH3>
             <FriendH3>Age: {friend.age}</FriendH3>
             <FriendH3>email: {friend.email}</FriendH3>
           </FriendCard>
 
-        </Link>
+        </LinkFriend>
 
       ))}
 

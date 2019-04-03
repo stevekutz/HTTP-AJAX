@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 /*
 font-family: 'Kalam', cursive;
@@ -11,13 +12,14 @@ font-family: 'Poppins', sans-serif;
 
 
 const FriendsListContainer = styled.div`
- border: 1px solid orange;
+ border: 1px solid orangered;
  display: flex;
  align-items: center;
  align-content: center;
  justify-content: center;
  flex-wrap: wrap; 
  width: 90%;
+ margin 5px;
  border-radius: 4px;
  
 
@@ -42,9 +44,15 @@ const FriendCard = styled.div`
 
 const FriendH3 = styled.div`
   text-decoration: none;
-  font-size: .75rem;
+  font-size: 1rem;
   
 `;
 
 
-export {FriendsListContainer, FriendCard, FriendH3};
+const LinkFriend = styled(Link)`
+  text-decoration: none;
+  font-size: 1rem;
+  color: darkslategray;
+`;
+
+export {FriendsListContainer, FriendCard, FriendH3, LinkFriend};

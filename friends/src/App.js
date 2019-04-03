@@ -53,7 +53,19 @@ class App extends Component {
   render() {
     return (
       <MainApp>
-        <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
+
+        <nav>
+          <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
+          <NavLink to = "/friend-form">
+            {`${this.state.activeFriend}
+              ? 'Add'
+              : 'Update'
+            } Friend`}
+          </NavLink>
+        </nav>
+
+
+
 
         <Route
           exact

@@ -12,9 +12,6 @@ font-family: 'Poppins', sans-serif;
 const MainApp = styled.div`
   border: 4px solid blue;
   color: white;
-  text-shadow: 5px 5px 3px darkgray;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
   background: lightpink;
   max-width: 880px;
   margin: .5% auto;
@@ -32,6 +29,11 @@ const MainApp = styled.div`
 const MainAppH1 = styled.div`
     font-family: 'Chewy', cursive;
     font-size: 4rem;
+    
+      color: white;
+  text-shadow: 5px 5px 3px darkgray;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 `;
 
 
