@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
+import FriendList from './components/FriendContainer/FriendList';
+
 import axios from 'axios';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
   NavLink,
-  Route
+  Route,
 
 
 } from 'react-router-dom'
 
-import './App.css';
+import {
+  MainApp,
+  MainAppH1
+} from './components/Styled/MainApp_Styled';
+
+
+// import './App.css';
 
 class App extends Component {
   constructor(){
@@ -44,9 +52,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1> Something </h1>
-      </div>
+      <MainApp>
+        <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
+
+        <Route
+          exact
+          path = "/"
+          render = {
+            props => <FriendList {...props} friends = {this.state.friends}/>
+          }
+
+        />
+
+      </MainApp>
+
     );
   }
 }

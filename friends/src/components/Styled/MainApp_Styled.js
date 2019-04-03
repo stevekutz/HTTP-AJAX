@@ -1,5 +1,13 @@
-.App {
-  border: 1px solid pink;
+import styled from 'styled-components';
+
+const MainApp = styled.div`
+  border: 4px solid blue;
+  color: white;
+  text-shadow: 5px 5px 3px darkgray;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+  background: lightpink;
   max-width: 880px;
   margin: .5% auto;
   display: flex;
@@ -17,4 +25,16 @@ font-family: 'Heebo', sans-serif;
 font-family: 'Poppins', sans-serif;
      */
 
-}
+
+
+
+`;
+
+const MainAppH1 = styled.div`
+    font-family: 'Chewy', cursive;
+    font-size: 3rem;
+`;
+
+
+export {MainApp, MainAppH1};
+
