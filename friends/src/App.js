@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FriendList from './components/FriendContainer/FriendList';
+import Friend from './components/FriendContainer/Friend';
 
 import axios from 'axios';
 import ReactDOM from 'react-dom';
@@ -57,7 +58,7 @@ class App extends Component {
         <nav>
           <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
           <NavLink to = "/friend-form">
-            {`${this.state.activeFriend}
+            {`${this.state.activeFriend
               ? 'Add'
               : 'Update'
             } Friend`}
@@ -73,6 +74,19 @@ class App extends Component {
           render = {
             props => <FriendList {...props} friends = {this.state.friends}/>
           }
+
+        />
+
+        <Route
+          path = "/:friendID"
+          render = {props => (
+            <Friend
+              {...props}
+              friends = {this.state.friends}
+            />
+
+
+          )}
 
         />
 
