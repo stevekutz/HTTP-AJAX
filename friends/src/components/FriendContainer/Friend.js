@@ -43,7 +43,7 @@ function Friend({friends, match}) {
   return (
     <div className = "FriendWrapper">
         <h1>Something inside with id {id}</h1>
-      <h2> Show me </h2>
+      <h2> Show me {friend.name}</h2>
     </div>
 
 

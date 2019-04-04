@@ -64,7 +64,7 @@ class App extends Component {
 
         <Route
 
-          path = "/friend-list/"
+          path = "/friend-list"
           render = {
             props => <FriendList {...props} friends = {this.state.friends}/>
           }
