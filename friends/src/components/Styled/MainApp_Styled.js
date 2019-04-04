@@ -14,10 +14,11 @@ const MainApp = styled.div`
   color: white;
   background: lightpink;
   max-width: 880px;
+  min-height: 300px
   margin: .5% auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
   font-size: 62.5%;

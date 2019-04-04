@@ -19,7 +19,7 @@ const FriendsListContainer = styled.div`
  justify-content: center;
  flex-wrap: wrap; 
  width: 90%;
- margin 5px;
+ margin 15px;
  border-radius: 4px;
  
 

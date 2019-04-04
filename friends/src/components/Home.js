@@ -2,28 +2,25 @@ import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 
 
-import {MainAppH1} from "./Styled/MainApp_Styled";
+import {
+  HomeH1,
+  HomeNavLink,
 
 
-/*
-      <NavLink to = "/friend-form">
-        {`${this.state.activeFriend
-          ? 'Add'
-          : 'Update'
-          } Friend`}
-      </NavLink>
- */
+} from "./Styled/HomeStyled";
+
+
 
 const Home = () => {
 
   return(
-    <nav>
-      <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
+    <div>
+      <HomeH1> Friends with HTTP-AJAX !!!</HomeH1>
 
-      <NavLink exact to="/"> Home </NavLink>
-      <NavLink to="/friend-list"> My Besties </NavLink>
+      <HomeNavLink exact to="/"> Home </HomeNavLink>
+      <HomeNavLink to="/friend-list"> My Besties </HomeNavLink>
 
-    </nav>
+    </div>
 
 
   )
