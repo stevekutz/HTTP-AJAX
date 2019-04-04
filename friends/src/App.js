@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import FriendList from './components/FriendContainer/FriendList';
 import Friend from './components/FriendContainer/Friend';
+import Home from './components/Home';
 
 import axios from 'axios';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-router-dom';
 import {
   BrowserRouter as Router,
   NavLink,
@@ -38,7 +39,7 @@ class App extends Component {
     axios
       .get('http://localhost:5000/friends')
       .then(result => {
-        console.log("Dan said to check result, so...", result);
+       //  console.log("Dan said to check result, so...", result);
         this.setState({ friends: result.data});
 
       })
@@ -50,27 +51,20 @@ class App extends Component {
 
   }
 
+  //           <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
 
   render() {
     return (
       <MainApp>
 
-        <nav>
-          <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
-          <NavLink to = "/friend-form">
-            {`${this.state.activeFriend
-              ? 'Add'
-              : 'Update'
-            } Friend`}
-          </NavLink>
-        </nav>
 
 
+        <Route path="/" component={Home} />
 
 
         <Route
-          exact
-          path = "/"
+
+          path = "/friend-list/"
           render = {
             props => <FriendList {...props} friends = {this.state.friends}/>
           }
@@ -78,7 +72,7 @@ class App extends Component {
         />
 
         <Route
-          path = "/:friendID"
+          path = "/friend-list/:id"   // {/* path = "/:friendID"  */}
           render = {props => (
             <Friend
               {...props}
