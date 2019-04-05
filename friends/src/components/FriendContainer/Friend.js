@@ -1,9 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Route} from 'react-router-dom'; // for subroutes later
+
+import {
+  FriendsListContainer,
+  FriendCard,
+  FriendH3,
+  LinkFriend
+
+} from '../Styled/FriendContainerStyled';
 
 
-
-function Friend({friends, match}) {
+function Friend({friends, match, deleteFriend, setUpdateForm}) {
 
   console.log('Friends are ', friends);
   console.log('match is ', match);
@@ -19,31 +26,41 @@ function Friend({friends, match}) {
   });
 
 
-
-
   /*
-  console.log('Friend props ', props);
-
-  const friend = props.friends.find(bestie => {
-    console.log("bestie is ", bestie);
-    console.log("matched friend is ", props.match.params.id);
-
-    return `${bestie.id}` === props.match.params.id;
-
-  });
-  */
-
-  /*
-      <h4>name: {friend.name}</h4>
-      <h4>age: {friend.age}</h4>
-      <h4>email: {friend.email}</h4>
+          <h2> Friend name: {friend.name}</h2>
+        <h2> Friend age: {friend.age}</h2>
+        <h2> Friend email: {friend.email}</h2>
 
    */
 
+
   return (
     <div className = "FriendWrapper">
+      <div className = "FriendCard">
         <h1>Something inside with id {id}</h1>
-      <h2> Show me {friend.name}</h2>
+        <h2> Friend name: {friend.name}</h2>
+        <h2> Friend age: {friend.age}</h2>
+        <h2> Friend email: {friend.email}</h2>
+
+      </div>
+
+      <button
+        className = "UpdateButton"
+        onClick = {e => setUpdateForm(e, friend)}
+      >
+        Update Friend
+      </button>
+
+
+      <button
+        className = "DeleteButton"
+        onClick={ e => deleteFriend(e, friend.id)}
+      >
+        Delete Friend
+      </button>
+
+
+
     </div>
 
 

@@ -12,7 +12,7 @@ class FriendForm extends React.Component{
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if(
-      (this.props.activeFriend && prevProps.activeFriend)
+      this.props.activeFriend && prevProps.activeFriend
           !== this.props.activeFriend
     ) {
       this.setState({

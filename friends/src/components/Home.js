@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
+
 
 
 import {
@@ -18,15 +18,18 @@ const Home = (props) => {
       <HomeH1> Friends with HTTP-AJAX !!!</HomeH1>
 
 
-      <NavLink to = "/friend-form">
-        {`${props.activeFriend
-            ? "Update"
-            : "Add"
-        } Friend`}
-      </NavLink>
+
 
       <HomeNavLink exact to="/"> Home </HomeNavLink>
       <HomeNavLink to="/friend-list"> My Besties </HomeNavLink>
+
+      <HomeNavLink to = "/friend-form">
+        {`${props.activeFriend
+          ? "Update"
+          : "Add"
+          } Friend`}
+      </HomeNavLink>
+
 
     </div>
 

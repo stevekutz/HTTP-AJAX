@@ -31,7 +31,6 @@ const HomeNavLink = styled(NavLink)`
   margin: 10px;
   text-decoration: none;
   font-size: 2rem;
-  // color: darkslategray;
   color: silver;
     -webkit-text-stroke-width: .25px;
     -webkit-text-stroke-color: black;

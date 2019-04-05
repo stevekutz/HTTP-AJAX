@@ -39,9 +39,9 @@ class App extends Component {
 
     axios
       .get('http://localhost:5000/friends')
-      .then(result => {
+      .then(res => {
        //  console.log("Dan said to check result, so...", result);
-        this.setState({ friends: result.data});
+        this.setState({ friends: res.data});
       })
       .catch(err => {
         console.log("YOU got an ERROR!", err);
@@ -55,9 +55,9 @@ class App extends Component {
     console.log("%%%%%%% check addFriend friend ", friend);
 
     axios
-      .post("http://localhost:5000/friends", friend)
-      .then(result => {
-        this.setState({ friends: result.data })
+      .post('http://localhost:5000/friends', friend)
+      .then(res => {
+        this.setState({ friends: res.data })
       })
       .catch(err => {
         console.log(err);
@@ -67,12 +67,12 @@ class App extends Component {
 
   deleteFriend = (e, id) => {
     e.preventDefault();
-    console.log(">>>> check deleteFriend id ", id);
+    console.log(">>>> check deleteFriend id ", this.props);
 
     axios
       .delete(`http://localhost:5000/friends/${id}`)
-      .then(result => {
-        this.setState({ friends: result.data });
+      .then(res => {
+        this.setState({ friends: res.data });
         this.props.history.push("/friend-list");
       })
       .catch(err => {
@@ -82,6 +82,7 @@ class App extends Component {
   };
 
   setUpdateForm = (e, friend) => {
+    console.log("setUpdateFrom friend is ", friend);
     e.preventDefault();
     this.setState({ activeFriend: friend });
 
@@ -93,10 +94,10 @@ class App extends Component {
     e.preventDefault();
     axios
       .put(`http://localhost:5000/friends/${friend.id}`, friend)
-      .then(result => {
+      .then(res => {
         this.setState({
           activeFriend: null,
-          friends: result.data
+          friends: res.data
         });
         this.props.history.push("/friend-list");
       })
