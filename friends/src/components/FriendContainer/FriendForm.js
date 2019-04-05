@@ -24,7 +24,7 @@ class FriendForm extends React.Component{
 
   changeHandler = ev => {
     ev.persist();
-    let value = ev.value;
+    let value = ev.target.value;
 
     if(ev.target.name === 'age') {
       value = parseInt(value, 10);
@@ -66,7 +66,7 @@ class FriendForm extends React.Component{
 
           <input
             className = 'FriendFormInput'
-            type = 'string'
+            type = 'text'
             name = 'name'
             onChange = {this.changeHandler}
             placeholder = 'bestie goes here'
@@ -90,6 +90,7 @@ class FriendForm extends React.Component{
             name = 'email'
             onChange = {this.changeHandler}
             placeholder = 'email goes here'
+            value = {this.state.friend.email}
 
           />
 

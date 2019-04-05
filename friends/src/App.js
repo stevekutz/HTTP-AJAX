@@ -42,26 +42,22 @@ class App extends Component {
       .then(result => {
        //  console.log("Dan said to check result, so...", result);
         this.setState({ friends: result.data});
-
       })
       .catch(err => {
         console.log("YOU got an ERROR!", err);
         this.setState({error: err});
-
       })
 
   }
 
   addFriend = (e, friend) => {
     e.preventDefault();
-    console.log("Dan says to check addFriend friend ", friend);
+    console.log("%%%%%%% check addFriend friend ", friend);
 
     axios
       .post("http://localhost:5000/friends", friend)
       .then(result => {
-        this.setState(
-          {friends: result.data}
-        )
+        this.setState({ friends: result.data })
       })
       .catch(err => {
         console.log(err);
@@ -69,17 +65,59 @@ class App extends Component {
 
   };
 
+  deleteFriend = (e, id) => {
+    e.preventDefault();
+    console.log(">>>> check deleteFriend id ", id);
+
+    axios
+      .delete(`http://localhost:5000/friends/${id}`)
+      .then(result => {
+        this.setState({ friends: result.data });
+        this.props.history.push("/friend-list");
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+  };
+
+  setUpdateForm = (e, friend) => {
+    e.preventDefault();
+    this.setState({ activeFriend: friend });
+
+    this.props.history.push("/friend-form");
+  };
 
 
+  updateFriend = (e, friend) => {
+    e.preventDefault();
+    axios
+      .put(`http://localhost:5000/friends/${friend.id}`, friend)
+      .then(result => {
+        this.setState({
+          activeFriend: null,
+          friends: result.data
+        });
+        this.props.history.push("/friend-list");
+      })
+      .catch(err => {
+        console.log(err);
+      })
 
+  };
+
+  // <Route path="/" component={Home} />
 
   render() {
     return (
       <MainApp>
 
 
-
-        <Route path="/" component={Home} />
+        <Route path="/"
+               render = {
+                 props => <Home {...props} friends = {this.state.friends}/>
+               }
+        />
 
 
         <Route
@@ -97,6 +135,9 @@ class App extends Component {
             <Friend
               {...props}
               friends = {this.state.friends}
+              deleteFriend = {this.deleteFriend}
+              setUpdateForm = {this.setUpdateForm}
+
             />
           )}
         />
@@ -107,13 +148,11 @@ class App extends Component {
             <FriendForm
               {...props}
               activeFriend = {this.state.activeFriend}
-
+              addFriend = {this.addFriend}
+              updateFriend = {this.updateFriend}
 
             />
           )}
-
-
-
 
 
 
