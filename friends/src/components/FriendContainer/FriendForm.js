@@ -104,7 +104,7 @@ class FriendForm extends React.Component{
         </form>
 
       </div>
-      
+
     )
 
   }

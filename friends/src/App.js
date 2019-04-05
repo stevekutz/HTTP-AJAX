@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FriendList from './components/FriendContainer/FriendList';
 import Friend from './components/FriendContainer/Friend';
 import Home from './components/Home';
+import FriendForm from './components/FriendContainer/FriendForm';
 
 import axios from 'axios';
 import ReactDOM from 'react-router-dom';
@@ -51,7 +52,26 @@ class App extends Component {
 
   }
 
-  //           <MainAppH1> Friends with HTTP-AJAX !!!</MainAppH1>
+  addFriend = (e, friend) => {
+    e.preventDefault();
+    console.log("Dan says to check addFriend friend ", friend);
+
+    axios
+      .post("http://localhost:5000/friends", friend)
+      .then(result => {
+        this.setState(
+          {friends: result.data}
+        )
+      })
+      .catch(err => {
+        console.log(err);
+      })
+
+  };
+
+
+
+
 
   render() {
     return (
@@ -78,11 +98,28 @@ class App extends Component {
               {...props}
               friends = {this.state.friends}
             />
+          )}
+        />
+
+        <Route
+          path = "/friend-form"
+          render = {props => (
+            <FriendForm
+              {...props}
+              activeFriend = {this.state.activeFriend}
 
 
+            />
           )}
 
+
+
+
+
+
         />
+
+
 
       </MainApp>
 
