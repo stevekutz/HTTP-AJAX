@@ -33,6 +33,10 @@ function Friend({friends, match, deleteFriend, setUpdateForm}) {
 
    */
 
+  if(!friend) {
+    return <h2>.... LOADING in Friends</h2>
+  }
+
 
   return (
     <div className = "FriendWrapper">

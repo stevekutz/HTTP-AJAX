@@ -131,7 +131,7 @@ class App extends Component {
         />
 
         <Route
-          path = "/friend-list/:id"   // {/* path = "/:friendID"  */}
+          path = "/friend-list/:id"
           render = {props => (
             <Friend
               {...props}
@@ -166,5 +166,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
