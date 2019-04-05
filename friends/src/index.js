@@ -5,9 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router, withRouter} from 'react-router-dom';
 
+// use HOC to provide history, match, location objects as props into App
 const AppWithRouter = withRouter(App);
-// export default withRouter(Component)
-
 
 ReactDOM.render(
   <Router>

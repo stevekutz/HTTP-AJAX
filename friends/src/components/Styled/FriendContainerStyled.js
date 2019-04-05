@@ -55,4 +55,26 @@ const LinkFriend = styled(Link)`
   color: darkslategray;
 `;
 
-export {FriendsListContainer, FriendCard, FriendH3, LinkFriend};
+const Button = styled.button`
+  color: dodgerblue;
+  font-size: 1em;
+  margin: 1em;
+  padding: 1.25rem 2rem;
+  border: 2px solid palevioletred;
+  border-radius: 15px;
+ font-family: 'Playball', cursive;
+  font-size: 1.25rem;
+
+`;
+
+
+export {FriendsListContainer,
+        FriendCard,
+        FriendH3,
+        LinkFriend,
+        Button,
+
+
+
+
+};

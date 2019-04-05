@@ -5,7 +5,9 @@ import {
   FriendsListContainer,
   FriendCard,
   FriendH3,
-  LinkFriend
+  LinkFriend,
+  Button,
+
 
 } from '../Styled/FriendContainerStyled';
 
@@ -48,20 +50,20 @@ function Friend({friends, match, deleteFriend, setUpdateForm}) {
 
       </div>
 
-      <button
+      <Button
         className = "UpdateButton"
         onClick = {e => setUpdateForm(e, friend)}
       >
         Update Friend
-      </button>
+      </Button>
 
 
-      <button
+      <Button
         className = "DeleteButton"
         onClick={ e => deleteFriend(e, friend.id)}
       >
         Delete Friend
-      </button>
+      </Button>
 
 
 

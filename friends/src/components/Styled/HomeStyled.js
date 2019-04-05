@@ -11,6 +11,18 @@ font-family: 'Heebo', sans-serif;
 font-family: 'Poppins', sans-serif;
    */
 
+const HomeDiv = styled.div`
+
+
+`;
+
+const HomeNavLinkDiv = styled.div`
+  border: 1px solid darkred;
+  display: flex;
+  justify-content: center;
+
+`;
+
 
 const HomeH1 = styled.div`
     border: 1px solid green;
@@ -37,11 +49,5 @@ const HomeNavLink = styled(NavLink)`
   font-family: 'Parisienne', cursive;
 `;
 
-const HomeNavButton = styled.button`
-  
 
-
-`;
-
-
-export {HomeH1, HomeNavLink};
+export {HomeDiv, HomeNavLinkDiv, HomeH1, HomeNavLink};
