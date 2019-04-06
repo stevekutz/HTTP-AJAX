@@ -1,11 +1,8 @@
 import React from 'react';
-import Friend from "./Friend";
-import {MainApp} from "../Styled/MainApp_Styled";
-import {Route} from 'react-router-dom'; // for subroutes later
+// import {Route} from 'react-router-dom'; // for subroutes later
 
 
 import {
-  FriendH3,
   FriendH3Title,
   FormFriend,
   FormButton,

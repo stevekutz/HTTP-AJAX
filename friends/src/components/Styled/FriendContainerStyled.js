@@ -83,6 +83,14 @@ const Button = styled.button`
 
 `;
 
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+`;
+
+
 const FormFriend = styled.form`
   display: flex;
   justify-content: center;      
@@ -130,6 +138,7 @@ export {FriendsListContainer,
         FriendH3Title,
         LinkFriend,
         Button,
+        ButtonContainer,
         FormFriend,
         FormButton,
         FormInput,

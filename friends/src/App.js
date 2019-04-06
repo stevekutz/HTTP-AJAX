@@ -17,9 +17,6 @@ import {
 
 } from './components/Styled/MainApp_Styled';
 
-import {FriendsListContainer} from "./components/Styled/FriendContainerStyled";
-
-
 // import './App.css';
 
 class App extends Component {

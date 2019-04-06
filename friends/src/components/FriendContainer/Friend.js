@@ -1,13 +1,10 @@
 import React from 'react';
-import {Route} from 'react-router-dom'; // for subroutes later
+// import {Route} from 'react-router-dom'; // for subroutes later
 
 import {
-  FriendsListContainer,
   FriendCard,
-  FriendH3,
-  LinkFriend,
   Button,
-
+  ButtonContainer,
 
 } from '../Styled/FriendContainerStyled';
 
@@ -50,22 +47,22 @@ function Friend({friends, match, deleteFriend, setUpdateForm}) {
 
       </FriendCard>
 
-      <Button
-        className = "UpdateButton"
-        onClick = {e => setUpdateForm(e, friend)}
-      >
-        Update Friend
-      </Button>
+      <ButtonContainer>
+        <Button
+          className = "UpdateButton"
+          onClick = {e => setUpdateForm(e, friend)}
+        >
+          Update Friend
+        </Button>
 
 
-      <Button
-        className = "DeleteButton"
-        onClick={ e => deleteFriend(e, friend.id)}
-      >
-        Delete Friend
-      </Button>
-
-
+        <Button
+          className = "DeleteButton"
+          onClick={ e => deleteFriend(e, friend.id)}
+        >
+          Delete Friend
+        </Button>
+      </ButtonContainer>
 
     </div>
 

@@ -28,7 +28,7 @@ const MainApp = styled.div`
 
 
 `;
-
+/*
 const MainAppH1 = styled.div`
     font-family: 'Chewy', cursive;
     font-size: 4rem;
@@ -38,6 +38,7 @@ const MainAppH1 = styled.div`
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 `;
+*/
 
 const ResetButton = styled(Button)`
   border: 1px solid darkred;
