@@ -49,7 +49,7 @@ const ResetButton = styled(Button)`
   background: darkgray;
   margin: .25rem;
   font-family: 'Poppins', sans-serif;      
-
+  outline: none;
 `;
 
 

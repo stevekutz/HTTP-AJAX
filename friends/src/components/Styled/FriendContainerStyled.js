@@ -80,7 +80,7 @@ const Button = styled.button`
   border-radius: 15px;
   font-family: 'Playball', cursive;
   font-size: 1.25rem;
-
+  outline: none;      
 `;
 
 
@@ -110,7 +110,7 @@ const FormButton = styled(Button)`
   color: darkslategray;
   background: papayawhip;
   margin: .25rem;
-        
+  outline: none;      
 
 `;
 
