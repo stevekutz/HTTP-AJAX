@@ -17,7 +17,6 @@ const HomeDiv = styled.div`
 `;
 
 const HomeNavLinkDiv = styled.div`
-  border: 1px solid darkred;
   display: flex;
   justify-content: center;
 
@@ -25,7 +24,6 @@ const HomeNavLinkDiv = styled.div`
 
 
 const HomeH1 = styled.div`
-    border: 1px solid green;
     font-family: 'Chewy', cursive;
     font-size: 4rem;
     color: white;

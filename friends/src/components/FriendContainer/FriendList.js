@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+
 
 import {
   FriendsListContainer,
-  FriendCard,
+  FriendListCard,
   FriendH3,
   LinkFriend
 
@@ -19,15 +19,16 @@ const FriendList = (props) => {
     <FriendsListContainer>
       {props.friends.map(friend => (
         <LinkFriend to = {`/friend-list/${friend.id}`} key = {friend.id}>
-          <FriendCard>
+          <FriendListCard>
             <FriendH3>Name: {friend.name}</FriendH3>
             <FriendH3>Age: {friend.age}</FriendH3>
             <FriendH3>email: {friend.email}</FriendH3>
-          </FriendCard>
+          </FriendListCard>
 
         </LinkFriend>
 
       ))}
+
 
 
     </FriendsListContainer>

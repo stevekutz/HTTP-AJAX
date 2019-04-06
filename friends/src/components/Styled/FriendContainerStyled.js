@@ -12,7 +12,6 @@ font-family: 'Poppins', sans-serif;
 
 
 const FriendsListContainer = styled.div`
- border: 1px solid orangered;
  display: flex;
  align-items: center;
  align-content: center;
@@ -26,26 +25,43 @@ const FriendsListContainer = styled.div`
 
 `;
 
-const FriendCard = styled.div`
-  border: 2px solid white;
+const FriendListCard = styled.div`
+  border: 1px solid darkslategray;
   margin: 5px;
   border-radius: 15px;
   padding: .5rem;
   display: flex;
   flex-direction: column;
   font-family: 'Playball', cursive;
-  
+  color: darkslategray;
+  background: aliceblue;
   text-decoration: none;
   font-size: .75rem;
+`;
 
 
+const FriendCard = styled(FriendListCard)`
+  color: dodgerblue;
+  background: aliceblue;
+  border: 2px solid palevioletred;      
 
 `;
 
 const FriendH3 = styled.div`
   text-decoration: none;
   font-size: 1rem;
+  padding: .5rem;
+  text-shadow: 3px 3px 2px darkgray;
   
+`;
+
+const FriendH3Title = styled(FriendH3)`
+  font-size: 2rem;
+  padding: .5rem;
+  text-shadow: 3px 3px 2px darkgray;
+      -webkit-text-stroke-width: .25px;
+      -webkit-text-stroke-color: black;
+
 `;
 
 
@@ -62,19 +78,61 @@ const Button = styled.button`
   padding: 1.25rem 2rem;
   border: 2px solid palevioletred;
   border-radius: 15px;
- font-family: 'Playball', cursive;
+  font-family: 'Playball', cursive;
   font-size: 1.25rem;
 
 `;
 
+const FormFriend = styled.form`
+  display: flex;
+  justify-content: center;      
+  width: 100%;      
+
+`;
+
+
+
+
+const FormButton = styled(Button)`
+  border: 1px solid darkslategray;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  
+  color: darkslategray;
+  background: papayawhip;
+  margin: .25rem;
+        
+
+`;
+
+const FormInput = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  color: ${props => props.inputColor || "palevioletred"};
+  background: papayawhip;
+  border: 1px solid darkslategray;
+  border-radius: 5px;
+`;
+
+const FormInputNarrow = styled(FormInput)`
+  width: 15%;      
+
+
+`;
+
+
 
 export {FriendsListContainer,
+        FriendListCard,
         FriendCard,
         FriendH3,
+        FriendH3Title,
         LinkFriend,
         Button,
-
-
-
-
+        FormFriend,
+        FormButton,
+        FormInput,
+        FormInputNarrow,
 };
+

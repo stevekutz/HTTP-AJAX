@@ -42,13 +42,13 @@ function Friend({friends, match, deleteFriend, setUpdateForm}) {
 
   return (
     <div className = "FriendWrapper">
-      <div className = "FriendCard">
+      <FriendCard>
         <h1>Something inside with id {id}</h1>
         <h2> Friend name: {friend.name}</h2>
         <h2> Friend age: {friend.age}</h2>
         <h2> Friend email: {friend.email}</h2>
 
-      </div>
+      </FriendCard>
 
       <Button
         className = "UpdateButton"

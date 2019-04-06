@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Button} from "./FriendContainerStyled";
 
 /*
 font-family: 'Kalam', cursive;
@@ -10,9 +11,10 @@ font-family: 'Poppins', sans-serif;
    */
 
 const MainApp = styled.div`
-  border: 4px solid blue;
+  border: 4px solid slategray;
   color: white;
   background: lightpink;
+  border-radius: 10px;
   max-width: 880px;
   min-height: 300px
   margin: .5% auto;
@@ -37,6 +39,18 @@ const MainAppH1 = styled.div`
     -webkit-text-stroke-color: black;
 `;
 
+const ResetButton = styled(Button)`
+  border: 1px solid darkred;
+  font-size: .5rem;
+  padding: .5rem 1rem;
+  border-radius: 10px;
+  color: darkred;
+  background: darkgray;
+  margin: .25rem;
+  font-family: 'Poppins', sans-serif;      
 
-export {MainApp, MainAppH1};
+`;
+
+
+export {MainApp, ResetButton};
 

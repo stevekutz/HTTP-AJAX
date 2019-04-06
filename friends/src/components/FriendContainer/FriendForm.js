@@ -1,4 +1,20 @@
 import React from 'react';
+import Friend from "./Friend";
+import {MainApp} from "../Styled/MainApp_Styled";
+import {Route} from 'react-router-dom'; // for subroutes later
+
+
+import {
+  FriendH3,
+  FriendH3Title,
+  FormFriend,
+  FormButton,
+  FormInput,
+  FormInputNarrow,
+
+} from '../Styled/FriendContainerStyled';
+
+
 
 class FriendForm extends React.Component{
   state = {
@@ -11,9 +27,28 @@ class FriendForm extends React.Component{
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(">>>>> CDU prevProps", prevProps);
+    console.log(">>>>> CDU prevState", prevState);
+    console.log(">>>>> CDU snapshot", snapshot);
+
+/*
+  this.props.activeFriend && prevProps.activeFriend
+          !== this.props.activeFriend
+
+ */
+
+/*
+      this.props.activeFriend !== this.props.activeFriend
+        &&
+      prevProps.activeFriend !== this.props.activeFriend
+        &&
+      prevState.friend !== this.props.activeFriend
+ */
+
     if(
       this.props.activeFriend && prevProps.activeFriend
-          !== this.props.activeFriend
+      !== this.props.activeFriend
+
     ) {
       this.setState({
         friend: this.props.activeFriend
@@ -61,48 +96,49 @@ class FriendForm extends React.Component{
   render() {
     return(
       <div>
-        <h3>{`${this.props.activeFriend ? 'Update' : 'Add'} Friend`} </h3>
-        <form onSubmit = {this.handleSubmit}>
+        <FriendH3Title>{`${this.props.activeFriend ? 'Update Current' : 'Add A New '} Friend`} </FriendH3Title>
+        <FormFriend onSubmit = {this.handleSubmit}>
 
-          <input
-            className = 'FriendFormInput'
+          <FormInput
+            inputColor = "dodgerblue"
             type = 'text'
             name = 'name'
             onChange = {this.changeHandler}
-            placeholder = 'bestie goes here'
+            placeholder = 'bestie name'
             value = {this.state.friend.name}
 
           />
 
-          <input
-            className = 'FriendFormInput'
+          <FormInputNarrow
+            inputColor = "rebeccapurple"
             type = 'number'
             name = 'age'
             onChange = {this.changeHandler}
-            placeholder = 'age goes here'
+            placeholder = 'bestie age'
             value = {this.state.friend.age}
 
           />
 
-          <input
-            className = 'FriendFormInput'
+          <FormInput
+            inputColor = "seagreen"
             type = 'string'
             name = 'email'
             onChange = {this.changeHandler}
-            placeholder = 'email goes here'
+            placeholder = 'bestie email'
             value = {this.state.friend.email}
 
           />
 
-          <button className = "FriendFormButton">
+          <FormButton className = "FriendFormButton">
             {`${this.props.activeFriend 
               ? 'Update'
               : 'Add'
             } Friend `}
 
-          </button>
+          </FormButton>
 
-        </form>
+        </FormFriend>
+
 
       </div>
 

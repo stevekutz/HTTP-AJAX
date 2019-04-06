@@ -11,9 +11,15 @@ import {
 
 } from "./Styled/HomeStyled";
 
+/*
+         {`${props.activeFriend
+            ? "Update"
+            : "Add"
+            } Friend`}
+*/
 
 
-const Home = (props) => {
+const Home = () => {
 
   return(
     <HomeDiv>
@@ -24,12 +30,7 @@ const Home = (props) => {
         <HomeNavLink exact to="/"> Home </HomeNavLink>
         <HomeNavLink to="/friend-list"> My Besties </HomeNavLink>
 
-        <HomeNavLink to = "/friend-form">
-          {`${props.activeFriend
-            ? "Update"
-            : "Add"
-            } Friend`}
-        </HomeNavLink>
+        <HomeNavLink to = "/friend-form"> Add Friend </HomeNavLink>
 
       </HomeNavLinkDiv>
 

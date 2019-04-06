@@ -5,10 +5,7 @@ import Home from './components/Home';
 import FriendForm from './components/FriendContainer/FriendForm';
 
 import axios from 'axios';
-import ReactDOM from 'react-router-dom';
 import {
-  BrowserRouter as Router,
-  NavLink,
   Route,
 
 
@@ -16,8 +13,11 @@ import {
 
 import {
   MainApp,
-  MainAppH1
+  ResetButton,
+
 } from './components/Styled/MainApp_Styled';
+
+import {FriendsListContainer} from "./components/Styled/FriendContainerStyled";
 
 
 // import './App.css';
@@ -36,11 +36,30 @@ class App extends Component {
 
   componentDidMount() {
     console.log("CDM active");
+    axios
+      .get('http://localhost:5000/friends')
+      .then(res => {
+        this.setState({ friends: res.data});
+      })
+      .catch(err => {
+        console.log("YOU got an ERROR!", err);
+        this.setState({error: err});
+      })
+  }
+
+  resetFriends = () => {
+    console.log("RESET invoked");
+    this.setState({
+        activeFriend: null,
+        friends: [],
+        error: '',
+        errorMSG: 'You need to get out and make some friends ;(  ...',
+      }
+    );
 
     axios
       .get('http://localhost:5000/friends')
       .then(res => {
-       //  console.log("Dan said to check result, so...", result);
         this.setState({ friends: res.data});
       })
       .catch(err => {
@@ -48,20 +67,27 @@ class App extends Component {
         this.setState({error: err});
       })
 
-  }
+  };
+
+
 
   addFriend = (e, friend) => {
     e.preventDefault();
-    console.log("%%%%%%% check addFriend friend ", friend);
 
-    axios
-      .post('http://localhost:5000/friends', friend)
-      .then(res => {
-        this.setState({ friends: res.data })
-      })
-      .catch(err => {
-        console.log(err);
-      })
+    if( friend.name && friend.age && friend.email) {
+      axios
+        .post('http://localhost:5000/friends', friend)
+        .then(res => {
+          this.setState({ friends: res.data })
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    } else {
+      console.log("You entered no friend info")
+    }
+
+
 
   };
 
@@ -82,7 +108,7 @@ class App extends Component {
   };
 
   setUpdateForm = (e, friend) => {
-    console.log("setUpdateFrom friend is ", friend);
+    console.log("setUpdateForm friend is ", friend);
     e.preventDefault();
     this.setState({ activeFriend: friend });
 
@@ -114,44 +140,47 @@ class App extends Component {
       <MainApp>
 
 
-        <Route path="/"
-               render = {
-                 props => <Home {...props} friends = {this.state.friends}/>
-               }
+        <Route
+          path="/"
+          render = { props =>
+            <Home
+              {...props}
+              friends = {this.state.friends}
+            />
+          }
         />
 
 
         <Route
-
           exact path = "/friend-list"
-          render = {
-            props => <FriendList {...props} friends = {this.state.friends}/>
+          render = { props =>
+            <FriendList
+              {...props}
+              friends = {this.state.friends}
+            />
           }
-
         />
 
         <Route
           path = "/friend-list/:id"
-          render = {props => (
+          render = { props => (
             <Friend
               {...props}
               friends = {this.state.friends}
               deleteFriend = {this.deleteFriend}
               setUpdateForm = {this.setUpdateForm}
-
             />
           )}
         />
 
         <Route
           path = "/friend-form"
-          render = {props => (
+          render = { props => (
             <FriendForm
               {...props}
               activeFriend = {this.state.activeFriend}
               addFriend = {this.addFriend}
               updateFriend = {this.updateFriend}
-
             />
           )}
 
@@ -159,6 +188,12 @@ class App extends Component {
 
         />
 
+        <ResetButton
+          className = "resetButton"
+          onClick = {this.resetFriends}
+        >
+          Reset
+        </ResetButton>
 
 
       </MainApp>
