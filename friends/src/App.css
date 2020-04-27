@@ -1,0 +1,20 @@
+.App {
+  border: 1px solid pink;
+  max-width: 880px;
+  margin: .5% auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 62.5%;
+  /*
+font-family: 'Kalam', cursive;
+font-family: 'Parisienne', cursive;
+font-family: 'Playball', cursive;
+font-family: 'Chewy', cursive;
+font-family: 'Heebo', sans-serif;
+font-family: 'Poppins', sans-serif;
+     */
+
+}
